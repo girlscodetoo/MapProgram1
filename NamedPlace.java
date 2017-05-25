@@ -1,24 +1,12 @@
-import java.awt.Color;
+/**
+ * Elev:                Pers nr:        Anvnamn ilearn:
+ * Anton Fluch          910630-3358     (anfl4215)
+ * Georgios Gultidis    911112-0136     (gegu0774)
+ */
 
-import javax.swing.JOptionPane;
+public class NamedPlace extends Place {
 
-public class NamedPlace extends Plats {
-
-	
-	public NamedPlace(String name, Position position, String valdkategori, MapProgram mp) {
-		super(name, position, valdkategori, mp);
-		
-	}
-public String getTitel() {
-	return "Named"; 
-}
-	public void showInfo() {
-		String info = "" + getName() + " {" + getPosition() + "} ";
-		JOptionPane.showMessageDialog(null, info, "PlatsInfo:", JOptionPane.QUESTION_MESSAGE);
-}
-	public String toString() {
-	    return  getTitel() + " "  +  super.getType() + " " + super.getPosition() + " " +  super.getName();
-
-
-	}
+    public NamedPlace(MainController mainController, String placeType, String name, int x, int y, Category category) {
+        super(mainController, placeType, name, x, y, category);
+    }
 }

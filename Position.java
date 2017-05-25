@@ -1,49 +1,38 @@
+/**
+ * Elev:                Pers nr:        Anvnamn ilearn:
+ * Anton Fluch          910630-3358     (anfl4215)
+ * Georgios Gultidis    911112-0136     (gegu0774)
+ */
 
 public class Position {
-	int x;
-	int y;
+    int xPixel;
+    int yPixel;
 
-	public Position(int x, int y) {
-		this.x = x;
-		this.y = y;
-	}
+    public Position(int x, int y) {
+        this.xPixel = x;
+        this.yPixel = y;
+    }
 
-	public int getPositionX() {
-		return x;
-	}
+    public int getxPixel() {
+        return xPixel;
+    }
 
-	public int getPositionY() {
-		return y;
+    public int getyPixel() {
+        return yPixel;
+    }
 
-	}
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof Position) {
+            Position otherPos = (Position) other;
+            return xPixel == otherPos.xPixel && yPixel == otherPos.yPixel;
+        } else {
+            return false;
+        }
+    }
 
-	public String toString() {
-		return (Integer.toString(x) + "," + Integer.toString(y));														// KALLA!
-
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + x;
-		result = prime * result + y;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Position other = (Position) obj;
-		if (x != other.x)
-			return false;
-		if (y != other.y)
-			return false;
-		return true;
-	}
+    @Override
+    public int hashCode() {
+        return (xPixel * 100) + yPixel;
+    }
 }

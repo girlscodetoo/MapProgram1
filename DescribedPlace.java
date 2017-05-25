@@ -1,37 +1,18 @@
-import java.awt.Color;
+/**
+ * Elev:                Pers nr:        Anvnamn ilearn:
+ * Anton Fluch          910630-3358     (anfl4215)
+ * Georgios Gultidis    911112-0136     (gegu0774)
+ */
 
-import javax.swing.JOptionPane;
+public class DescribedPlace extends Place {
+    private String description;
 
-public class DescribedPlace extends Plats {
+    public DescribedPlace(MainController mainController, String placeType, String name, int x, int y, Category category, String description) {
+        super(mainController, placeType, name, x, y, category);
+        this.description = description;
+    }
 
-	private String description; 
-
-	
-public DescribedPlace(String name, Position position, String valdkategori, String description, MapProgram mp) {
-		super(name, position, valdkategori, mp);
-		this.description = description; 
-
-		
-	}
-	public String getPlaceDescription(){
-		return description; 
-	
-	}
-	public void showInfo() {
-	DescribedForm t = new DescribedForm();
-		String description = getPlaceDescription(); 
-		String position =  "  {" +  getPosition() + "}";
-		t.setNamn(getName()); 
-		t.setDescription(description + position);
-		JOptionPane.showMessageDialog(null, t,  "PlatsInfo:", JOptionPane.QUESTION_MESSAGE);
-
-}
-	public String getTitel() {
-		return "Described"; 
-	}	
-	public String toString() {
-	    return  getTitel() + ""  + super.getType()+  " " + super.getPosition() +  " " +  super.getName() +  " " + getPlaceDescription() + " " ;//METOD TO STRIN GÖF R ATT KALLA! 
-
-
-	}
+    public String getDescription() {
+        return description;
+    }
 }
